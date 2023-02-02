@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body class="container bg-light bg-gradient">
+
+<header class="row mt-3 p-3 bg-primary bg-gradient">
+  <h1 class="col-md-12 text-light text-center">Create a movie</h1>
+</header>
+
+<section class="container mt-5">
+
+  <form class="col-md-3" th:method="POST" th:action="@{/movies/add}">
+    <input type="hidden" name="courseId" th:value="(${movieObject} != null ? ${movieObject.getId_movie()} : '')">
+
+    <div class="form-group">
+      <label class="form-label" for='id_movie'>Movie id:</label>
+      <input class="form-control" id='id_movie' type='text' name='id_movie' th:value="(${movieObject} != null ? ${movieObject.getId_movie()} : '')"/>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for='title_movie'>Movie name:</label>
+      <input class="form-control" id='title_movie' type='text' name='title_movie' th:value="(${movieObject} != null ? ${movieObject.getTitle_movie()} : '')"/>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for='director'>Movie director:</label>
+      <input class="form-control" id='director' type='text' name='director' th:value="(${movieObject} != null ? ${movieObject.getDirector()} : '')"/>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for='description'>Movie description:</label>
+      <input class="form-control" id='description' type='text' name='description' th:value="(${movieObject} != null ? ${movieObject.getDescription()} : '')"/>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for='duration_min'>Movie duration:</label>
+      <input class="form-control" id='duration_min' type='text' name='duration_min' th:value="(${movieObject} != null ? ${movieObject.getDuration_min()} : '')"/>
+    </div>
+
+    <input class="btn btn-primary mt-3" type='submit' value='Submit'/>
+  </form>
+
+
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

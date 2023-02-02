@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body class="container bg-light bg-gradient">
+
+<header class="row mt-3 p-3 bg-primary bg-gradient">
+    <h1 class="col-md-12 text-light text-center">Make a reservation</h1>
+</header>
+
+<section class="container mt-5">
+
+    <form class="col-md-3" th:method="POST" th:action="@{/reservations/add}">
+
+        <div class="form-group">
+            <label class="form-label" for='id_reservation'>ID:</label>
+            <input class="form-control" id='id_reservation' type='text' name='id_reservation' th:value="(${reservationObject} != null ? ${reservationObject.getId_reservation()} : '')"/>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for='active_reservation'>Active</label>
+            <input class="form-control" id='active_reservation' type='text' name='active_reservation' th:value="(${reservationObject} != null ? ${reservationObject.getActive()} : '')"/>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for='price'>Price: </label>
+            <input class="form-control" id='price' type='text' name='price' th:value="(${reservationObject} != null ? ${reservationObject.getPrice_eur()} : '')"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for='datum_rezervacija'>Date of reservation:</label>
+            <input class="form-control" id='datum_rezervacija' type='text' name='datum_rezervacija' th:value="(${reservationObject} != null ? ${reservationObject.getDatum_rezervacija()} : '')"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for='id_korisnik'>User ID:</label>
+            <input class="form-control" id='id_korisnik' type='text' name='id_korisnik' th:value="(${reservationObject} != null ? ${reservationObject.getId_korisnik()} : '')"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for='id_seat'>Seat ID:</label>
+            <input class="form-control" id='id_seat' type='text' name='id_seat' th:value="(${reservationObject} != null ? ${reservationObject.getId_seat()} : '')"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for='id_seat_reserved'>Seat reserved ID:</label>
+            <input class="form-control" id='id_seat_reserved' type='text' name='id_seat_reserved' th:value="(${reservationObject} != null ? ${reservationObject.getId_seat_reserved()} : '')"/>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for='id_screening'>Screening ID:</label>
+            <input class="form-control" id='id_screening' type='text' name='id_screening' th:value="(${reservationObject} != null ? ${reservationObject.getId_screening()} : '')"/>
+        </div>
+
+
+        <input class="btn btn-primary mt-3" type='submit' value='Submit'/>
+    </form>
+
+
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
